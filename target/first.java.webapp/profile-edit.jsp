@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="/profile.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/profile.css" />
 </head>
 <body>
 
@@ -108,7 +108,7 @@
                 </address>
             </blockquote>
         </section>
-        <input type="submit" value="Save" />
+        <input type="submit" value="Запазване" />
     </form>
 </main>
 <footer></footer>

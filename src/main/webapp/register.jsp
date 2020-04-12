@@ -8,9 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" type="text/css" href="forms.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/forms.css" />
 </head>
 <body>
 <div class="reg">

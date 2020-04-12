@@ -10,18 +10,15 @@
 
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="/profile.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/profile.css" />
 </head>
 <body>
-
-<%--<jsp:useBean id="user" class="models.UserModel"/>--%>
-<%--<%user = (UserModel) session.getAttribute("user"); %>--%>
-
-<%--<c:set var="u" value="<%=user%>"/>--%>
-
-<header></header>
+<header>
+    <section>
+        <a href="/logout">Изход</a>
+    </section>
+</header>
 <main>
     <section>
         <blockquote>
@@ -122,7 +119,7 @@
         </blockquote>
     </section>
     <form method="get" action="/profile/edit">
-        <input type="submit" value="Edit" />
+        <input type="submit" value="Редактиране" />
     </form>
 </main>
 <footer></footer>
