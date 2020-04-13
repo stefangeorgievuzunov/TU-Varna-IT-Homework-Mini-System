@@ -131,9 +131,9 @@ main form input{
 }
 
 main form input[type=submit]{
-  width:15%;
-  display: inline-block;
-  margin: 0 auto;
+  width:50%;
+  display: block;
+  margin: auto;
   text-align: center;
   border:none;
   background-color:#012e5e;

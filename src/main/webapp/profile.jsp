@@ -20,6 +20,12 @@
     </section>
 </header>
 <main>
+    <c:if test="${!cookie.containsKey('welcomeMsg')}">
+        <form method="get" action="/profile/close">
+            <h2>Добър ден с ТУ Варна</h2>
+            <input type="submit" value="Затвори" />
+        </form>
+    </c:if>
     <section>
         <blockquote>
             <picture>
