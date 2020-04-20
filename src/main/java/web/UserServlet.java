@@ -18,16 +18,6 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        UserModel user = (UserModel) req.getSession(false).getAttribute("user");
-
-        if (user != null) {
-            req.setAttribute("user", user);
-        } else {
-            resp.sendRedirect("/login");
-            return;
-        }
-
         if (req.getRequestURI().equals("/profile/edit")) {
             req.getRequestDispatcher("/profile-edit.jsp").forward(req, resp);
         } else {
