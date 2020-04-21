@@ -1,0 +1,43 @@
+
+body{
+    background-color: #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color:#012e5e;
+    height: 100px;
+    width: 100%;
+}
+header section{
+    margin:auto;
+    padding:20px;
+    width:75%;
+    height: auto;
+}
+header section a{
+    color:#FFF;
+}
+header section a:hover{
+    color: #ffb606;
+}
+
+table{
+    width: 75%;
+    padding: 5px;
+    color: #012e5e;
+    background-color: #FFF;
+    border: 1px solid #012e5e;
+}
+
+table th{
+    text-align: left;
+}
+.table-header{
+    background-color:#ffb606;
+}
+.empty-users-message{
+    color: #012e5e;
+    position: center;
+}

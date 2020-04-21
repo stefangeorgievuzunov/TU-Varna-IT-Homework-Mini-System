@@ -94,7 +94,6 @@ public class UsersServiceImplementation implements UsersService {
     @Override
     public UserModel getUserById(Integer id) {
         Users user = entityManager.find(Users.class, id);
-
         if (user == null) return null;
 
         return modelMapper.map(user,UserModel.class);
