@@ -8,7 +8,6 @@ public class ModelMapperFactory {
     @Produces
     public ModelMapper modelMapper() {
         ModelMapper mapper = new ModelMapper();
-
         return mapper;
     }
 }

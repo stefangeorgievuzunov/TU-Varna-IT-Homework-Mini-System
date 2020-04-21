@@ -16,6 +16,7 @@
     <section>
         <a href="/register">Регистрация</a>
         <a href="/login">Вход</a>
+        <a href="/users/all"></a>
     </section>
 </header>
 </body>

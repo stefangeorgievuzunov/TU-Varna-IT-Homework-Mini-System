@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UsersServiceImplementation implements UsersService {
     private final ModelMapper modelMapper;
@@ -65,7 +66,7 @@ public class UsersServiceImplementation implements UsersService {
         if (loggedUser == null) return null;
 
         Users user = entityManager.find(Users.class, loggedUser.getId());
-        if(user==null) return null;
+        if (user == null) return null;
 
         user.setName(name);
         user.setJob(job);
@@ -79,5 +80,23 @@ public class UsersServiceImplementation implements UsersService {
         entityManager.getTransaction().commit();
 
         return modelMapper.map(user, UserModel.class);
+    }
+
+    @Override
+    public List<UserModel> getAllUsers() {
+        return entityManager.createQuery("select u from Users u", Users.class)
+                .getResultList()
+                .stream()
+                .map(user -> modelMapper.map(user, UserModel.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public UserModel getUserById(Integer id) {
+        Users user = entityManager.find(Users.class, id);
+
+        if (user == null) return null;
+
+        return modelMapper.map(user,UserModel.class);
     }
 }
