@@ -38,7 +38,7 @@ public class UserServlet extends HttpServlet {
 
         if (user != null) {
             req.getSession().setAttribute("user", user);
-            resp.sendRedirect("/profile");
+            resp.sendRedirect("/profile?id="+user.getId());
         } else {
             doGet(req, resp);
         }

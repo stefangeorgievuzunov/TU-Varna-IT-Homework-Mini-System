@@ -3,4 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <filter>
+        <filter-name>ProfileIsUserLogged</filter-name>
+        <filter-class>filters.profile.IsUserLogged</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ProfileIsUserLogged</filter-name>
+        <url-pattern>/profile</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ProfileUrlCorrectness</filter-name>
+        <filter-class>filters.profile.UrlCorrectness</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ProfileUrlCorrectness</filter-name>
+        <url-pattern>/profile</url-pattern>
+    </filter-mapping>
+
 </web-app>
