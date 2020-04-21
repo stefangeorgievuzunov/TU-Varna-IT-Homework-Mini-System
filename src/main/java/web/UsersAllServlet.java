@@ -23,9 +23,9 @@ public class UsersAllServlet extends HttpServlet {
 
         if(!usersAll.isEmpty()) {
             req.setAttribute("usersAll", usersAll);
-            req.getRequestDispatcher("/users-all.jsp").forward(req, resp);
+            req.getRequestDispatcher("/users_all.jsp").forward(req, resp);
         }else{
-            req.getRequestDispatcher("/users-all-empty.jsp").forward(req, resp);
+            req.getRequestDispatcher("/users_all_empty.jsp").forward(req, resp);
         }
     }
 }

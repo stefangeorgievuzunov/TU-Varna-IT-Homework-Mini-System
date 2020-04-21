@@ -19,7 +19,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getRequestURI().equals("/profile/edit")) {
-            req.getRequestDispatcher("/profile-edit.jsp").forward(req, resp);
+            req.getRequestDispatcher("/profile_edit.jsp").forward(req, resp);
         } else {
             req.getRequestDispatcher("/profile.jsp").forward(req, resp);
         }

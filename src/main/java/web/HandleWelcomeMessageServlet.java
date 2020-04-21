@@ -26,6 +26,5 @@ public class HandleWelcomeMessageServlet extends HttpServlet {
 
         resp.addCookie(welcomeMessage);
         resp.sendRedirect("/profile");
-        return;
     }
 }

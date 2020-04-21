@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./CSS/forms.css"/>
 </head>
 <body>
+<jsp:include page="header.jsp" />
 <div class="reg">
     <h1>Влезте в системата</h1>
     <div class="reg-body">

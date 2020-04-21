@@ -14,11 +14,7 @@
     <link rel="stylesheet" type="text/css" href="./CSS/profile.css" />
 </head>
 <body>
-<header>
-    <section>
-        <a href="/logout">Изход</a>
-    </section>
-</header>
+<jsp:include page="header.jsp" />
 <main>
     <c:if test="${!cookie.containsKey('welcomeMsg')}">
         <form method="get" action="/profile/close">
