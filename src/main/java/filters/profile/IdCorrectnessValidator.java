@@ -23,7 +23,6 @@ public class IdCorrectnessValidator implements Filter {
         try {
             Integer id = Integer.parseInt(paramId);
             UserModel showUserProfile = usersService.getUserById(id);
-
             if (showUserProfile == null) {
                 //TODO show page 404
                 resp.sendRedirect("/users/all");

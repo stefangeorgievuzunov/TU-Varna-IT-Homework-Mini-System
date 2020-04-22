@@ -36,6 +36,7 @@ public class UsersServiceImplementation implements UsersService {
         user.setEmail(email);
         user.setPassword(password);
 
+        entityManager.clear();
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
@@ -45,6 +46,7 @@ public class UsersServiceImplementation implements UsersService {
     public UserModel login(String email, String password) {
         if (email == null || password == null) return null;
 
+        entityManager.clear();
         List<Users> users = entityManager.createQuery(
                 "select u from Users u where u.email=:email and u.password=:password", Users.class)
                 .setParameter("email", email)
@@ -60,6 +62,7 @@ public class UsersServiceImplementation implements UsersService {
 
     @Override
     public UserModel edit(Integer id, String name, String job, String description, String city, String phoneNumber, String street) {
+        entityManager.clear();
         Users user = entityManager.find(Users.class, id);
         if (user == null) return null;
 
@@ -79,6 +82,7 @@ public class UsersServiceImplementation implements UsersService {
 
     @Override
     public List<UserModel> getAllUsers() {
+        entityManager.clear();
         return entityManager.createQuery("select u from Users u", Users.class)
                 .getResultList()
                 .stream()
@@ -88,9 +92,11 @@ public class UsersServiceImplementation implements UsersService {
 
     @Override
     public UserModel getUserById(Integer id) {
+        entityManager.clear();
+
         Users user = entityManager.find(Users.class, id);
         if (user == null) return null;
 
-        return modelMapper.map(user,UserModel.class);
+        return modelMapper.map(user, UserModel.class);
     }
 }
