@@ -1,7 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
 <head>
     <title>Потребители</title>
@@ -17,7 +16,7 @@
         </tr>
         <c:forEach var="user" items="${usersAll}">
             <tr>
-                <th><c:out value="${user.name}"/></th>
+                <th><a href="/profile?id=${user.id}"><c:out value="${user.name}"/></a></th>
                 <th><c:out value="${user.job}"/></th>
                 <th><c:out value="${user.description}"/></th>
             </tr>

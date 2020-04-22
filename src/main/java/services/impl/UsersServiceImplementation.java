@@ -59,13 +59,8 @@ public class UsersServiceImplementation implements UsersService {
     }
 
     @Override
-    public UserModel edit(HttpServletRequest req, String name, String job, String description, String city, String phoneNumber, String street) {
-        if (req == null) return null;
-
-        UserModel loggedUser = (UserModel) req.getSession(false).getAttribute("user");
-        if (loggedUser == null) return null;
-
-        Users user = entityManager.find(Users.class, loggedUser.getId());
+    public UserModel edit(Integer id, String name, String job, String description, String city, String phoneNumber, String street) {
+        Users user = entityManager.find(Users.class, id);
         if (user == null) return null;
 
         user.setName(name);

@@ -17,7 +17,7 @@
 <body>
 <jsp:include page="header.jsp" />
 <main>
-    <form method="post" action="/profile/edit">
+    <form method="post" action="/profile/edit?id=<c:out value="${user.id}"/>">
         <section>
             <blockquote>
                 <picture>
@@ -34,7 +34,9 @@
                         <input type="text" name="job" value='<c:out value="${user.job}"/>' />
                     </h4>
                     <p>
-                        <textarea name="desc" id="" cols="60" rows="5" placeholder="Описание..."></textarea>
+                        <textarea name="desc" cols="60" rows="5" placeholder="Описание...">
+                            <c:out value="${user.description}"/>
+                        </textarea>
                     </p>
                 </aside>
             </blockquote>

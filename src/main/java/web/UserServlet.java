@@ -27,6 +27,7 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Integer id=Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         String job = req.getParameter("job");
         String desc = req.getParameter("desc");
@@ -34,10 +35,10 @@ public class UserServlet extends HttpServlet {
         String phoneNumber = req.getParameter("phoneNumber");
         String street = req.getParameter("street");
 
-        UserModel user = usersService.edit(req, name, job, desc, city, phoneNumber, street);
+        UserModel user = usersService.edit(id, name, job, desc, city, phoneNumber, street);
 
         if (user != null) {
-            req.getSession().setAttribute("user", user);
+            req.getSession(false).setAttribute("user", user);
             resp.sendRedirect("/profile?id="+user.getId());
         } else {
             doGet(req, resp);

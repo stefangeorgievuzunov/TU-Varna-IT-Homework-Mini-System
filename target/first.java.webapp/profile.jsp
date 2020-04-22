@@ -11,15 +11,15 @@
 <html lang="en" dir="ltr">
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="./CSS/profile.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/profile.css"/>
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 <main>
     <c:if test="${!cookie.containsKey('welcomeMsg')}">
         <form method="get" action="/profile/close">
             <h2>Добър ден с ТУ Варна</h2>
-            <input type="submit" value="Затвори" />
+            <input type="submit" value="Затвори"/>
         </form>
     </c:if>
     <section>
@@ -120,9 +120,11 @@
             </address>
         </blockquote>
     </section>
-    <form method="get" action="/profile/edit">
-        <input type="submit" value="Редактиране" />
-    </form>
+    <c:if test="${loggedUser.id eq user.id}">
+        <form method="get" action="/profile/edit">
+            <input type="submit" value="Редактиране"/>
+        </form>
+    </c:if>
 </main>
 <footer></footer>
 </body>
