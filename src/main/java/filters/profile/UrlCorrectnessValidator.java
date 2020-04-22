@@ -25,8 +25,7 @@ public class UrlCorrectnessValidator implements Filter {
             }
 
         } else if (!urlParams.containsKey("id")) {
-            //TODO page not found
-            resp.sendRedirect("/users/all");
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         } else {
             filterChain.doFilter(request, resp);
         }

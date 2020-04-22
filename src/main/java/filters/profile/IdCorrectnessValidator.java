@@ -24,15 +24,13 @@ public class IdCorrectnessValidator implements Filter {
             Integer id = Integer.parseInt(paramId);
             UserModel showUserProfile = usersService.getUserById(id);
             if (showUserProfile == null) {
-                //TODO show page 404
-                resp.sendRedirect("/users/all");
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
             } else {
                 request.setAttribute("user", showUserProfile);
                 filterChain.doFilter(request, resp);
             }
         } catch (NumberFormatException e) {
-            //TODO show page 404
-            resp.sendRedirect("/users/all");
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 }

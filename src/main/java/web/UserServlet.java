@@ -38,7 +38,6 @@ public class UserServlet extends HttpServlet {
         UserModel user = usersService.edit(id, name, job, desc, city, phoneNumber, street);
 
         if (user != null) {
-            System.out.println(user.getName()+"LAST POINT"+user.getDescription());
             req.getSession().setAttribute("user", user);
             resp.sendRedirect("/profile?id="+user.getId());
         } else {
