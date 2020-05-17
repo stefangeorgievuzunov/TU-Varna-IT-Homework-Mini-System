@@ -51,9 +51,12 @@
                 <h3>Професионални</h3>
                 <li>
                     <h4>Java</h4>
-                    <span>
-                <span style="width:85%"></span>
-            </span>
+                    <input class="slider" type="range" min="0" max="100" value="50">
+<%--                    <span>--%>
+<%--                <span style="width:85%">--%>
+<%--                    --%>
+<%--                </span>--%>
+<%--            </span>--%>
                 </li>
                 <li>
                     <h4>PHP</h4>
