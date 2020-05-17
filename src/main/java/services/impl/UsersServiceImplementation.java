@@ -6,6 +6,7 @@ import org.modelmapper.ModelMapper;
 import services.UsersService;
 import services.UsersValidationService;
 
+import javax.annotation.ManagedBean;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;

@@ -17,14 +17,15 @@
 <body>
 <jsp:include page="header.jsp" />
 <main>
+    <h2>Профилна информация</h2>
     <form method="post" action="/profile/edit?id=<c:out value="${user.id}"/>">
+        <input type="submit" value="Запазване" />
         <section>
             <blockquote>
                 <picture>
                     <img src="/imgs/male.svg"/>
                 </picture>
                 <aside>
-                    <h2>Профилна информация</h2>
                     <h4>
                         Име:
                         <input type="text" name="name" value='<c:out value="${user.name}"/>' />
@@ -41,7 +42,10 @@
                 </aside>
             </blockquote>
         </section>
+    </form>
         <h2>Умения</h2>
+    <form method="post" action="">
+         <input type="submit" value="Запазване" />
         <section>
             <ul>
                 <h3>Професионални</h3>
@@ -92,24 +96,29 @@
                 </li>
             </ul>
         </section>
+    </form>
         <h2>Контакти</h2>
+    <form method="post" action="">
+        <input type="submit" value="Запазване" />
         <section>
             <blockquote>
                 <address>
-                    <h4>Имейл</h4>
-                    <c:out value="${user.email}"/>
-                    <h4>Телефон</h4>
-                    <input type="text" name="phoneNumber" value='<c:out value="${user.phoneNumber}"/>' />
+                        <h4>Имейл</h4>
+                        <c:out value="${user.email}"/>
+                        <h4>Телефон</h4>
+                        <input type="text" name="phoneNumber" value='<c:out value="${user.phoneNumber}"/>' />
                 </address>
                 <address>
                     <h4>Град</h4>
-                    <input type="text" name="city" value='<c:out value="${user.city}"/>' />
-                    <h4>Улица</h4>
-                    <input type="text" name="street" value='<c:out value="${user.street}"/>' />
+                        <input type="text" name="city" value='<c:out value="${user.city}"/>' />
+                        <h4>Улица</h4>
+                        <input type="text" name="street" value='<c:out value="${user.street}"/>' />
                 </address>
             </blockquote>
         </section>
-        <input type="submit" value="Запазване" />
+    </form>
+    <form action="/profile?id=<c:out value="${user.id}"/>" >
+        <input type="submit" value="Преглед" />
     </form>
 </main>
 <footer></footer>

@@ -3,10 +3,12 @@ package services.impl;
 import models.entity.Users;
 import services.UsersValidationService;
 
+import javax.annotation.ManagedBean;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
+@ManagedBean
 public class UsersValidationServiceImplementation implements UsersValidationService {
     private final EntityManager entityManager;
 

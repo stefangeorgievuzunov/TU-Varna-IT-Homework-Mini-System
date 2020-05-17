@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 
         if (user != null) {
             req.getSession().setAttribute("user", user);
-            resp.sendRedirect("/profile?id="+user.getId());
+            resp.sendRedirect("/profile/edit?id="+user.getId());
         } else {
             doGet(req, resp);
         }
