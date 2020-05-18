@@ -1,11 +1,15 @@
 package entities;
 
-import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-
+@XmlRootElement(name="user")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
-    private static Integer idCounter=0;
+    private static Integer idCounter = 0;
     private Integer id;
     private String name;
     private String password;
@@ -14,11 +18,13 @@ public class User {
     private String description;
     private String phoneNumber;
     private Address address;
+    @XmlElementWrapper(name="social-skills")
     private List<Skill> socialSkills;
+    @XmlElementWrapper(name="programming-skills")
     private List<Skill> programmingSkills;
 
-    public User(){
-        id=idCounter++;
+    public User() {
+        id = idCounter++;
     }
 
     public Integer getId() {
@@ -98,14 +104,14 @@ public class User {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return id.hashCode();
     }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof User){
-            User user=(User) o;
+    public boolean equals(Object o) {
+        if (o instanceof User) {
+            User user = (User) o;
             return id.equals(user.id);
         }
         return false;
