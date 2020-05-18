@@ -111,11 +111,11 @@
             <address>
                 <h4>Град</h4>
                 <a href="#">
-                    <c:out value="${user.city}"/>
+                    <c:out value="${user.address.city}"/>
                 </a>
                 <h4>Улица</h4>
                 <a href="#">
-                    <c:out value="${user.street}"/>
+                    <c:out value="${user.address.street}"/>
                 </a>
             </address>
         </blockquote>

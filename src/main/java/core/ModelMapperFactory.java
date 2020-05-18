@@ -2,6 +2,7 @@ package core;
 
 import org.modelmapper.ModelMapper;
 
+import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
 
 public class ModelMapperFactory {

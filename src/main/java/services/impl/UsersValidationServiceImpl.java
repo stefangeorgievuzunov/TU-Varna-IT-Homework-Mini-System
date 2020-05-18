@@ -5,10 +5,11 @@ import services.CustomEntityManager;
 import services.UsersValidationService;
 
 import javax.annotation.ManagedBean;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import java.util.List;
 
-@ManagedBean
+@Default
 public class UsersValidationServiceImpl implements UsersValidationService {
     private final CustomEntityManager entityManager;
 

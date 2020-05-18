@@ -5,12 +5,15 @@ import entities.UsersList;
 import services.CustomEntityManager;
 import services.XMLParser;
 
+import javax.annotation.ManagedBean;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@Default
 public class CustomEntityManagerImpl implements CustomEntityManager {
-    XMLParser parser;
+    private final XMLParser parser;
 
     @Inject
     public CustomEntityManagerImpl(XMLParser parser) {

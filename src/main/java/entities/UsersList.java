@@ -9,7 +9,7 @@ import java.util.List;
 @XmlRootElement(name="users")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UsersList {
-    @XmlElement
+    @XmlElement(name="user")
     private List<User> users;
 
     public List<User> getUsers() {

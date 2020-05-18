@@ -113,9 +113,9 @@
                 </address>
                 <address>
                     <h4>Град</h4>
-                        <input type="text" name="city" value='<c:out value="${user.city}"/>' />
+                        <input type="text" name="city" value='<c:out value="${user.address.city}"/>' />
                         <h4>Улица</h4>
-                        <input type="text" name="street" value='<c:out value="${user.street}"/>' />
+                        <input type="text" name="street" value='<c:out value="${user.address.street}"/>' />
                 </address>
             </blockquote>
         </section>

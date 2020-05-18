@@ -1,14 +1,12 @@
 package entities;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name="user")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User {
+    @XmlTransient
     private static Integer idCounter = 0;
     private Integer id;
     private String name;
@@ -16,6 +14,7 @@ public class User {
     private String email;
     private String job;
     private String description;
+    @XmlElement(name="phone-number")
     private String phoneNumber;
     private Address address;
     @XmlElementWrapper(name="social-skills")

@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<users>
+    <user>
+        <id>0</id>
+        <name>stefko</name>
+        <password>123456789</password>
+        <email>stefko98@mail.bg</email>
+        <job>student</job>
+        <description>i love java</description>
+        <phone-number>0898208626</phone-number>
+        <address>
+            <city>Varna</city>
+            <street>G. Bakalov 20</street>
+        </address>
+        <social-skills/>
+        <programming-skills/>
+    </user>
+    <user>
+        <id>1</id>
+        <name>stefan</name>
+        <password>123456789</password>
+        <email>stefan.georgiev.uzunov@gmail.com</email>
+    </user>
+    <user>
+        <id>21</id>
+        <name>asdasdasd</name>
+        <password>123456789</password>
+        <email>asdasd@gma.s</email>
+    </user>
+    <user>
+        <id>27</id>
+        <name>213</name>
+        <password>123456789</password>
+        <email>1212@asdsa.c</email>
+    </user>
+</users>

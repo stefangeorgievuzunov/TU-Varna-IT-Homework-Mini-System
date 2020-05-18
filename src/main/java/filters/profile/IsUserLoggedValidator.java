@@ -1,8 +1,4 @@
 package filters.profile;
-
-import services.UsersService;
-
-import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

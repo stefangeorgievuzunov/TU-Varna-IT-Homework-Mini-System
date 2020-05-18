@@ -8,11 +8,13 @@ import org.modelmapper.ModelMapper;
 import services.UsersService;
 import services.UsersValidationService;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Default
 public class UsersServiceImpl implements UsersService {
     private final ModelMapper modelMapper;
     private final CustomEntityManager entityManager;
@@ -61,7 +63,9 @@ public class UsersServiceImpl implements UsersService {
             user.setJob(job);
             user.setDescription(description);
             user.setPhoneNumber(phoneNumber);
-            Address address = new Address(city, street);
+            Address address = new Address();
+            address.setCity(city);
+            address.setStreet(street);
             user.setAddress(address);
 
             entityManager.persist(user);
@@ -83,7 +87,7 @@ public class UsersServiceImpl implements UsersService {
     public UserModel getUserById(Integer id) {
         User user = entityManager.find(id);
         if (user != null)
-            modelMapper.map(user, UserModel.class);
+            return modelMapper.map(user, UserModel.class);
         return null;
     }
 }

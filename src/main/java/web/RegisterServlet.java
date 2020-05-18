@@ -1,6 +1,7 @@
 package web;
 
 import services.UsersService;
+import services.impl.UsersServiceImpl;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -12,7 +13,8 @@ import java.io.IOException;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-    @Inject private UsersService usersService;
+    @Inject
+    private  UsersService usersService;
 
     @Override
     protected  void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
             usersService.register(name,email,password,rePassword);
             resp.sendRedirect("/login");
         }catch(Exception excep){
-            System.out.println(excep.getMessage());
+            excep.printStackTrace();
             doGet(req,resp);
         }
     }
