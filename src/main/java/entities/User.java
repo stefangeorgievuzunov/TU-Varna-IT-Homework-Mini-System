@@ -6,8 +6,6 @@ import java.util.List;
 @XmlRootElement(name="user")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User {
-    @XmlTransient
-    private static Integer idCounter = 0;
     private Integer id;
     private String name;
     private String password;
@@ -22,8 +20,8 @@ public class User {
     @XmlElementWrapper(name="programming-skills")
     private List<Skill> programmingSkills;
 
-    public User() {
-        id = idCounter++;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

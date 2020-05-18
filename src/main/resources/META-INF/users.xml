@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <users>
     <user>
-        <id>0</id>
+        <id>1</id>
         <name>stefko</name>
         <password>123456789</password>
         <email>stefko98@mail.bg</email>
@@ -16,21 +16,9 @@
         <programming-skills/>
     </user>
     <user>
-        <id>1</id>
+        <id>2</id>
         <name>stefan</name>
         <password>123456789</password>
         <email>stefan.georgiev.uzunov@gmail.com</email>
-    </user>
-    <user>
-        <id>21</id>
-        <name>asdasdasd</name>
-        <password>123456789</password>
-        <email>asdasd@gma.s</email>
-    </user>
-    <user>
-        <id>27</id>
-        <name>213</name>
-        <password>123456789</password>
-        <email>1212@asdsa.c</email>
     </user>
 </users>

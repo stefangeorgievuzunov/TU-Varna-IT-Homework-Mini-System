@@ -34,10 +34,13 @@ public class UsersServiceImpl implements UsersService {
             throw new Exception("Corrupted user's data.");
         }
 
+        int id=entityManager.selectAll().size()+1;
+
         User user = new User();
         user.setName(name);
         user.setEmail(email);
         user.setPassword(password);
+        user.setId(id);
 
         entityManager.persist(user);
     }
