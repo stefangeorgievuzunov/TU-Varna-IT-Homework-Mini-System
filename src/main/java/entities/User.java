@@ -1,31 +1,30 @@
-package models.entity;
+package entities;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
-public class Users {
+
+public class User {
+    private static Integer idCounter=0;
     private Integer id;
     private String name;
     private String password;
     private String email;
     private String job;
     private String description;
-    private String city;
     private String phoneNumber;
-    private String street;
+    private Address address;
+    private List<Skill> socialSkills;
+    private List<Skill> programmingSkills;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    public User(){
+        id=idCounter++;
+    }
+
     public Integer getId() {
         return id;
     }
 
-    private void setId(Integer id) {
-        this.id = id;
-    }
-
-    @Column
     public String getName() {
         return name;
     }
@@ -34,7 +33,6 @@ public class Users {
         this.name = name;
     }
 
-    @Column(nullable = false)
     public String getPassword() {
         return password;
     }
@@ -43,7 +41,6 @@ public class Users {
         this.password = password;
     }
 
-    @Column(nullable = false)
     public String getEmail() {
         return email;
     }
@@ -52,7 +49,6 @@ public class Users {
         this.email = email;
     }
 
-    @Column
     public String getJob() {
         return job;
     }
@@ -61,7 +57,6 @@ public class Users {
         this.job = job;
     }
 
-    @Column
     public String getDescription() {
         return description;
     }
@@ -70,16 +65,6 @@ public class Users {
         this.description = description;
     }
 
-    @Column
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    @Column(name="phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -87,12 +72,42 @@ public class Users {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @Column
-    public String getStreet() {
-        return street;
+
+    public Address getAddress() {
+        return address;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Skill> getSocialSkills() {
+        return socialSkills;
+    }
+
+    public void setSocialSkills(List<Skill> socialSkills) {
+        this.socialSkills = socialSkills;
+    }
+
+    public List<Skill> getProgrammingSkills() {
+        return programmingSkills;
+    }
+
+    public void setProgrammingSkills(List<Skill> programmingSkills) {
+        this.programmingSkills = programmingSkills;
+    }
+
+    @Override
+    public int hashCode(){
+        return id.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof User){
+            User user=(User) o;
+            return id.equals(user.id);
+        }
+        return false;
     }
 }

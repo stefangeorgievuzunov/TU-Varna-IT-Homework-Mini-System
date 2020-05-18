@@ -1,9 +1,7 @@
 package filters.profile.edit;
 
-import models.UserModel;
-import services.UsersService;
+import services.models.UserModel;
 
-import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

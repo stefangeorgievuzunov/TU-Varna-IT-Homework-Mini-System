@@ -1,13 +1,20 @@
-package models;
+package services.models;
+
+import entities.Address;
+import entities.Skill;
+
+import java.util.List;
+
 public class UserModel {
     private Integer id;
     private String name;
     private String email;
     private String job;
     private String description;
-    private String city;
     private String phoneNumber;
-    private String street;
+    private Address address;
+    private List<Skill> socialSkills;
+    private List<Skill> programmingSkills;
 
     public Integer getId() { return id; }
 
@@ -35,28 +42,12 @@ public class UserModel {
         this.description = description;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
     }
 
     public void setName(String name) {
@@ -69,5 +60,29 @@ public class UserModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Skill> getSocialSkills() {
+        return socialSkills;
+    }
+
+    public void setSocialSkills(List<Skill> socialSkills) {
+        this.socialSkills = socialSkills;
+    }
+
+    public List<Skill> getProgrammingSkills() {
+        return programmingSkills;
+    }
+
+    public void setProgrammingSkills(List<Skill> programmingSkills) {
+        this.programmingSkills = programmingSkills;
     }
 }

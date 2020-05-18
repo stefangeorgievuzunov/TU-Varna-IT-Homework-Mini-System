@@ -1,4 +1,4 @@
-<%@ page import="models.UserModel" %><%--
+<%@ page import="services.models.UserModel" %><%--
   Created by IntelliJ IDEA.
   User: Stefan
   Date: 3/22/2020

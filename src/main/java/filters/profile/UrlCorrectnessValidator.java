@@ -1,6 +1,6 @@
 package filters.profile;
 
-import models.UserModel;
+import services.models.UserModel;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

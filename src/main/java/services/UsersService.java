@@ -1,8 +1,7 @@
 package services;
 
-import models.UserModel;
+import services.models.UserModel;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface UsersService {
