@@ -1,5 +1,11 @@
 package entities;
 
+import com.sun.xml.bind.XmlAccessorFactory;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Skill {
     private String name;
     private Integer value;

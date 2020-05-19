@@ -1,7 +1,6 @@
 package web;
 
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.joda.time.Duration;
 
 import javax.servlet.ServletException;

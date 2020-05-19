@@ -11,20 +11,21 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="/CSS/header.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/header.css"/>
 </head>
 <body>
+<%--<jsp:useBean id="user" scope="request" type="services.models.UserModel"/>--%>
 <header>
     <section>
         <c:choose>
             <c:when test="${not empty user}">
-                <a href="/logout">Изход</a>
-                <a href="/users/all">Потребители</a>
+                <a href="${pageContext.request.contextPath}/logout">Изход</a>
+                <a href="${pageContext.request.contextPath}/users/all">Потребители</a>
             </c:when>
             <c:otherwise>
-                <a href="/register">Регистрация</a>
-                <a href="/login">Вход</a>
-                <a href="/users/all">Потребители</a>
+                <a href="${pageContext.request.contextPath}/register">Регистрация</a>
+                <a href="${pageContext.request.contextPath}/login">Вход</a>
+                <a href="${pageContext.request.contextPath}/users/all">Потребители</a>
             </c:otherwise>
         </c:choose>
     </section>

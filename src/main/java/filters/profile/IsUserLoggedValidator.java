@@ -12,11 +12,11 @@ public class IsUserLoggedValidator implements Filter {
 
         Object user = request.getSession(false).getAttribute("user");
 
-        if (user == null) {
-            resp.sendRedirect("/login");
-        }else {
+        if(user!=null){
             request.setAttribute("loggedUser", user);
             filterChain.doFilter(request, resp);
+            return;
         }
+        resp.sendRedirect("/login");
     }
 }

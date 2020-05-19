@@ -16,7 +16,7 @@
 <div class="reg">
     <h1>Създаване на профил</h1>
     <div class="reg-body">
-        <form action="/register" method="post">
+        <form action="${pageContext.request.contextPath}/register" method="post">
             <label>Име:</label>
             <input type="text" name="name" placeholder="Въведете име за контакт">
             <label>Потребителско име:</label>

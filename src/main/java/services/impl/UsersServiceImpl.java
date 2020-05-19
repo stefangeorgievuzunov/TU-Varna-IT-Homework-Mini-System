@@ -79,6 +79,38 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    public UserModel skillsEdit(UserModel u) {
+        User user=entityManager.find(u.getId());
+
+        user.setSocialSkills(u.getSocialSkills());
+        user.setProgrammingSkills(u.getProgrammingSkills());
+
+        entityManager.persist(user);
+        return modelMapper.map(user, UserModel.class);
+    }
+
+    @Override
+    public UserModel personalEdit(UserModel u) {
+        User user=entityManager.find(u.getId());
+
+        user.setName(u.getName());
+        user.setJob(u.getJob());
+        user.setDescription(u.getDescription());
+
+        entityManager.persist(user);
+        return modelMapper.map(user, UserModel.class);
+    }
+
+    @Override
+    public UserModel contactsEdit(UserModel u) {
+        User user=entityManager.find(u.getId());
+        user.setAddress(u.getAddress());
+        user.setPhoneNumber(u.getPhoneNumber());
+        entityManager.persist(user);
+        return modelMapper.map(user, UserModel.class);
+    }
+
+    @Override
     public List<UserModel> getAllUsers() {
         return entityManager.selectAll()
                 .stream()
