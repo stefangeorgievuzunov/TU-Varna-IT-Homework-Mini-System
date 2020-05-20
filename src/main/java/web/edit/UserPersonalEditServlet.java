@@ -1,6 +1,7 @@
 package web.edit;
 
 import com.google.gson.Gson;
+import services.ResponseWriter;
 import services.UsersService;
 import services.models.UserModel;
 
@@ -16,24 +17,12 @@ import java.io.PrintWriter;
 @WebServlet("/fetch/personal")
 public class UserPersonalEditServlet extends HttpServlet {
     @Inject
-    private Gson gson;
-    @Inject private UsersService usersService;
+    private UsersService usersService;
+    @Inject
+    private ResponseWriter responseWriter;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StringBuilder sb = new StringBuilder();
-        String s;
-        while ((s = req.getReader().readLine()) != null) {
-            sb.append(s);
-        }
-
-        UserModel user = gson.fromJson(sb.toString(), UserModel.class);
-        UserModel result= usersService.personalEdit(user);
-
-
-        resp.setContentType("application/json;charset=UTF-8");
-        PrintWriter out = resp.getWriter();
-        out.println(gson.toJson(result));
-        out.flush();
+        responseWriter.write(req, resp, usersService::personalEdit);
     }
 }

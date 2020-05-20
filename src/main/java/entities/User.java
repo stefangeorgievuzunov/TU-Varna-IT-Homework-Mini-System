@@ -16,8 +16,10 @@ public class User {
     private String phoneNumber;
     private Address address;
     @XmlElementWrapper(name="social-skills")
+    @XmlElement(name="social-skill")
     private List<Skill> socialSkills;
     @XmlElementWrapper(name="programming-skills")
+    @XmlElement(name="programming-skill")
     private List<Skill> programmingSkills;
 
     public void setId(Integer id) {

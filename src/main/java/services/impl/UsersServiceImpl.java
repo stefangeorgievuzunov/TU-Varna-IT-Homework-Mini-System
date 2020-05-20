@@ -34,7 +34,7 @@ public class UsersServiceImpl implements UsersService {
             throw new Exception("Corrupted user's data.");
         }
 
-        int id=entityManager.selectAll().size()+1;
+        int id = entityManager.selectAll().size() + 1;
 
         User user = new User();
         user.setName(name);
@@ -80,7 +80,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UserModel skillsEdit(UserModel u) {
-        User user=entityManager.find(u.getId());
+        User user = entityManager.find(u.getId());
 
         user.setSocialSkills(u.getSocialSkills());
         user.setProgrammingSkills(u.getProgrammingSkills());
@@ -91,7 +91,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UserModel personalEdit(UserModel u) {
-        User user=entityManager.find(u.getId());
+        User user = entityManager.find(u.getId());
 
         user.setName(u.getName());
         user.setJob(u.getJob());
@@ -103,9 +103,11 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UserModel contactsEdit(UserModel u) {
-        User user=entityManager.find(u.getId());
+        User user = entityManager.find(u.getId());
+
         user.setAddress(u.getAddress());
         user.setPhoneNumber(u.getPhoneNumber());
+
         entityManager.persist(user);
         return modelMapper.map(user, UserModel.class);
     }

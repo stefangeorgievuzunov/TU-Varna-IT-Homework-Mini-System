@@ -21,33 +21,34 @@
         <password>123456789</password>
         <email>stefan.georgiev.uzunov@gmail.com</email>
         <job>Student</job>
-        <description>                                                        
+        <description>javaa  
+                        
                         
                         </description>
         <phone-number>+359 89820866</phone-number>
         <address>
-            <city>Straldzha</city>
+            <city>Qmbol</city>
             <street>Stefan karadzha 24</street>
         </address>
         <social-skills>
-            <socialSkills>
-                <name>adsa</name>
-                <value>57</value>
-            </socialSkills>
-            <socialSkills>
-                <name>jokes</name>
-                <value>3</value>
-            </socialSkills>
+            <social-skill>
+                <name>lover</name>
+                <value>100</value>
+            </social-skill>
         </social-skills>
         <programming-skills>
-            <programmingSkills>
-                <name>js</name>
-                <value>5</value>
-            </programmingSkills>
-            <programmingSkills>
+            <programming-skill>
+                <name>php</name>
+                <value>30</value>
+            </programming-skill>
+            <programming-skill>
+                <name>html</name>
+                <value>29</value>
+            </programming-skill>
+            <programming-skill>
                 <name>java</name>
-                <value>28</value>
-            </programmingSkills>
+                <value>77</value>
+            </programming-skill>
         </programming-skills>
     </user>
 </users>
